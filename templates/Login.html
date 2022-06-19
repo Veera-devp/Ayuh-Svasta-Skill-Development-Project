@@ -1,0 +1,244 @@
+<!--{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Health and Life Insurance Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" />
+  <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet" />
+  <link href="{% static '/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static '/css/responsive.css' %}" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.containerdiv{
+    display: grid;
+  height: 100%;
+  width: 100%;
+  padding: 100px;
+  place-items: center;
+}
+.wrapper{
+  width: 500px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #4158d0;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+form .content .pass-link{
+  color: "";
+}
+form .field input[type="submit"]
+{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .signup-link{
+  color: #262626;
+  margin-top: 20px;
+  text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+  color: #4158d0;
+  text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="../static/images/Superman.jpg" alt="">
+    </div>
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand " href="index.html">
+            <span>
+              आयुः स्वस्तः
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                <a class="nav-link" href={% url 'home' %}>Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href={% url 'about' %}> About  </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'services' %}>Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'news' %}> News </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'contact' %}>Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'login' %}>Login <span class="sr-only">(current)</span></a>
+              </li>
+              <form class="form-inline justify-content-center">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+      </div>
+  <section>
+      <div class="containerdiv">
+        <div class="wrapper">
+        <div class="title">
+        Login Form</div>
+        <form >
+          
+          <div class="field">
+            <input type="text" required></input>
+            <label>Email Address</label>
+          </div>
+        <div class="field">
+            <input type="password" required></input>
+            <label>Password</label>
+          </div>
+        <div class="content">
+            <div class="checkbox">
+              <input type="checkbox" id="remember-me"></input>
+              <label for="remember-me">Remember me</label>
+            </div>
+        <div class="pass-link">
+          <Link to='pass'>
+          <a herf="">Forgot Password?</a>
+        </Link>
+        </div>
+        </div>
+        <div class="field">
+          <a href={% url 'dash' %}>
+            <input type="submit" value="Login"></input>
+            </a>
+          </div>
+        <div class="signup-link">
+        Not a member?
+        <a href="{% url 'register' %}">Signup now</a>
+        
+        </div>
+        <div class="admin">
+          If you are an Agent
+          <a href="#">Click Here</a>
+        </div>
+        </form>
+        
+        </div>
+        </div>
+      </section>
+
+<script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</body>
+</html>-->
+

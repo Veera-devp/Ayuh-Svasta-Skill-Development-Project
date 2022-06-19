@@ -1,0 +1,935 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <title>Health and Life Insurance Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" />
+  <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet" />
+  <link href="{% static '/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static '/css/responsive.css' %}" rel="stylesheet" />
+  <!--<link href="{% static '/css/bies.css' %}" rel="stylesheet" />-->
+  <style>
+    :root {
+
+/*------------------------------------------------------------
+|
+| 1.1 COLOR
+|
+------------------------------------------------------------*/
+
+--ui-color-brand: #353535;
+
+/* COLOR PALETTE */
+
+--ui-color-n-000: #fff;
+--ui-color-n-025: #fafafa;
+--ui-color-n-050: #f5f5f5;
+--ui-color-n-300: #aeaeae;
+--ui-color-n-500: #353535;
+--ui-color-n-900: #1a1a1a;
+
+/* BACKGROUND COLOR */
+
+--ui-color-background-primary  : var(--ui-color-n-000);
+--ui-color-background-secondary: var(--ui-color-n-050);
+--ui-color-background-tertiary : var(--ui-color-n-025);
+
+/* TYPOGRAPHY COLOR */
+
+--ui-color-typography-heading: var(--ui-color-n-500);
+--ui-color-typography-body   : var(--ui-color-n-900);
+--ui-color-typography-note   : var(--ui-color-n-300);
+--ui-color-typography-button : var(--ui-color-n-000);
+
+/*------------------------------------------------------------
+|
+| 1.2 TYPOGRAPHY
+|
+------------------------------------------------------------*/
+
+--ui-typography-typeface: "Inter", sans-serif;
+
+/* FONT SIZE */
+
+--ui-typography-h1: 1.9375rem;
+--ui-typography-h2: 1.5625rem;
+--ui-typography-p : 1rem;
+--ui-typography-s : .8125rem;
+
+/* LEADING */
+
+--ui-typography-h1-leading: 1.2;
+--ui-typography-h2-leading: 1.2;
+--ui-typography-p-leading : 1.5;
+
+/* MARGIN */
+
+--ui-typography-margin-heading: .75rem;
+--ui-typography-margin-body   : 1.125rem;
+
+/*------------------------------------------------------------
+|
+| 1.3 LAYOUT
+|
+------------------------------------------------------------*/
+
+--ui-layout-container: 1.25rem;
+--ui-layout-grid     : 3.625rem;
+--ui-layout-gutter   : 1rem;
+
+/* GAP */
+
+--ui-gap-cta        : .75rem;
+--ui-gap-hero       : 2rem;
+--ui-gap-customer   : 2rem;
+--ui-gap-feature    : 2rem;
+--ui-gap-testimonial: 2rem;
+
+/* BORDER RADIUS */
+
+--ui-radius-avatar: 5rem;
+--ui-radius-button: 5rem;
+
+}
+
+/*--------------------------------------------------------------
+2.0 FOUNDATION
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+3.0 TYPOGRAPHY
+--------------------------------------------------------------*/
+
+a {
+color: var(--ui-color-brand);
+text-decoration: none;
+}
+
+h1,
+h2,
+p,
+ul { margin-top: 0; }
+
+h1,
+h2 {
+color: var(--ui-color-typography-heading);
+margin-bottom: var(--ui-typography-margin-heading);
+}
+
+h1 {
+font-size: var(--ui-typography-h1);
+line-height: var(--ui-typography-h1-leading);
+}
+
+h2 {
+font-size: var(--ui-typography-h2);
+line-height: var(--ui-typography-h2-leading);
+}
+
+p,
+ul { margin-bottom: var(--ui-typography-margin-body); }
+
+p:last-child,
+ul:last-child { margin-bottom: 0; }
+
+ul { padding-left: 0; }
+
+strong { font-weight: 700; }
+
+small { font-size: var(--ui-typography-s); }
+
+.ui-text-note {
+color: var(--ui-color-typography-note);
+line-height: 1;
+}
+
+/*--------------------------------------------------------------
+4.0 IMAGE
+--------------------------------------------------------------*/
+
+img,
+svg {
+display: block;
+height: auto;
+margin: 0 auto;
+max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+5.0 LAYOUT
+--------------------------------------------------------------*/
+
+.ui-layout-container {
+padding-left: var(--ui-layout-container);
+padding-right: var(--ui-layout-container);
+}
+
+.ui-layout-flex,
+.ui-layout-grid {
+align-items: center;
+justify-content: center;
+}
+
+.ui-layout-flex { display: flex; }
+
+.ui-layout-grid { display: grid; }
+
+/*--------------------------------------------------------------
+6.0 COMPONENT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+|
+| 6.1 CTA
+|
+--------------------------------------------------------------*/
+
+.ui-component-cta {
+flex-direction: column;
+row-gap: var(--ui-gap-cta);
+}
+
+/*--------------------------------------------------------------
+|
+| 6.2 BUTTON
+|
+--------------------------------------------------------------*/
+
+.ui-component-button {
+border: .0625rem solid var(--ui-color-brand);
+border-radius: var(--ui-radius-button);
+display: block;
+font-weight: 700;
+line-height: 1;
+text-align: center;
+}
+
+.ui-component-button-primary {
+background-color: var(--ui-color-brand);
+color: var(--ui-color-typography-button);
+}
+
+.ui-component-button-normal {
+padding: .75rem 1rem .875rem;
+width: fit-content;
+}
+
+.ui-component-button-small {
+font-size: var(--ui-typography-s);
+padding: .5rem .75rem .5625rem;
+}
+
+/*--------------------------------------------------------------
+|
+| 6.3 LIST
+|
+--------------------------------------------------------------*/
+
+.ui-component-list {
+grid-template-columns: 1fr;
+row-gap: .75rem;
+}
+
+.ui-component-list--item {
+background-position: left center;
+background-repeat: no-repeat;
+background-size: 1.125rem;
+list-style: none;
+padding-left: 1.875rem;
+}
+
+.ui-component-list--item-check {
+background-image: url(https://res.cloudinary.com/uisual/image/upload/assets/icons/check.svg);
+}
+
+/*--------------------------------------------------------------
+7.0 SECTION
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+|
+| 7.1 HEADER
+|
+--------------------------------------------------------------*/
+
+.ui-section-header {
+padding-bottom: 1.25rem;
+padding-top: 1.25rem;
+}
+
+.ui-section-header__layout { justify-content: space-between; }
+
+/*--------------------------------------------------------------
+|
+| 7.2 HERO
+|
+--------------------------------------------------------------*/
+
+.ui-section-hero {
+padding-bottom: 5rem;
+padding-top: 5rem;
+text-align: center;
+}
+
+.ui-section-hero--image { margin-top: var(--ui-gap-hero); }
+
+/*--------------------------------------------------------------
+|
+| 7.3 CUSTOMER
+|
+--------------------------------------------------------------*/
+
+.ui-section-customer__layout {
+flex-direction: column;
+row-gap: var(--ui-gap-customer);
+}
+
+.ui-section-customer--logo {
+height: 1.5rem;
+width: auto;
+}
+
+.ui-section-customer--logo-str { height: 1.75rem; }
+
+.ui-section-customer--logo-bhn { height: 1.375rem; }
+
+/*--------------------------------------------------------------
+|
+| 7.4 FEATURE
+|
+--------------------------------------------------------------*/
+
+.ui-section-feature {
+padding-bottom: 5rem;
+padding-top: 5rem;
+}
+
+.ui-section-feature__layout { row-gap: var(--ui-gap-feature); }
+
+.ui-section-feature__layout:nth-of-type(odd) div {
+grid-row-start: 1;
+}
+
+.ui-section-feature__layout:nth-of-type(even) {
+margin-bottom: 5rem;
+margin-top: 5rem;
+}
+
+/*--------------------------------------------------------------
+|
+| 7.5 TESTIMONIAL
+|
+--------------------------------------------------------------*/
+
+.ui-section-testimonial {
+background-color: var(--ui-color-background-tertiary);
+padding-bottom: 5rem;
+padding-top: 5rem;
+text-align: center;
+}
+
+.ui-section-testimonial__layout {
+margin-top: var(--ui-gap-testimonial);
+row-gap: var(--ui-gap-testimonial);
+}
+
+.ui-section-testimonial--avatar {
+border-radius: var(--ui-radius-avatar);
+height: 5rem;
+width: 5rem;
+}
+
+.ui-section-testimonial--quote {
+margin-bottom: 1rem;
+margin-top: 1rem;
+}
+
+.ui-section-testimonial--author { line-height: 1.25; }
+
+/*--------------------------------------------------------------
+|
+| 7.6 CLOSE
+|
+--------------------------------------------------------------*/
+
+.ui-section-close {
+background-color: var(--ui-color-background-secondary);
+padding-top: 5rem;
+text-align: center;
+}
+
+/*--------------------------------------------------------------
+|
+| 7.7 FOOTER
+|
+--------------------------------------------------------------*/
+
+.ui-section-footer {
+padding-bottom: 3rem;
+padding-top: 3rem;
+}
+
+.ui-section-footer__layout {
+flex-direction: column-reverse;
+row-gap: var(--ui-layout-gutter);
+}
+
+.ui-section-footer--copyright { margin-bottom: 0; }
+
+.ui-section-footer--nav {
+column-gap: var(--ui-layout-gutter);
+}
+
+/*--------------------------------------------------------------
+8.0 MEDIA
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+|
+| 8.1 768PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 48rem) {
+
+/*------------------------------------------------------------
+VARIABLE
+------------------------------------------------------------*/
+
+:root {
+
+  /*----------------------------------------------------------
+  |
+  | TYPOGRAPHY
+  |
+  ----------------------------------------------------------*/
+
+  /* FONT SIZE */
+
+  --ui-typography-h1: 2.1875rem;
+  --ui-typography-h2: 1.75rem;
+  --ui-typography-p : 1.125rem;
+  --ui-typography-s : .875rem;
+
+  /* MARGIN */
+
+  --ui-typography-margin-body: 1.25rem;
+
+  /*----------------------------------------------------------
+  |
+  | LAYOUT
+  |
+  ----------------------------------------------------------*/
+
+  --ui-layout-container: 4.25rem;
+  --ui-layout-gutter   : 1.5rem;
+
+  /* GAP */
+
+  --ui-gap-hero       : 3rem;
+  --ui-gap-feature    : 3rem;
+  --ui-gap-testimonial: 3rem;
+
+}
+
+/*------------------------------------------------------------
+IMAGE
+------------------------------------------------------------*/
+
+.ui-image-half-left {
+  padding-right: var(--ui-layout-gutter);
+}
+
+.ui-image-half-right {
+  padding-left: var(--ui-layout-gutter);
+}
+
+/*------------------------------------------------------------
+LAYOUT
+------------------------------------------------------------*/
+
+.ui-layout-container,
+.ui-layout-column-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ui-layout-grid-2,
+.ui-layout-grid-3 {
+  column-gap: var(--ui-layout-gutter);
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.ui-layout-column-4 {
+  width: calc((var(--ui-layout-grid) * 4) +
+         (var(--ui-layout-gutter) * 3));
+}
+
+.ui-layout-column-6 {
+  width: calc((var(--ui-layout-grid) * 6) +
+         (var(--ui-layout-gutter) * 5));
+}
+
+/*------------------------------------------------------------
+COMPONENT
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+|
+| LIST
+|
+------------------------------------------------------------*/
+
+.ui-component-list--item {
+  background-size: 1.25rem;
+  padding-left: 2rem;
+}
+
+/*------------------------------------------------------------
+SECTION
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+|
+| HEADER
+|
+------------------------------------------------------------*/
+
+.ui-section-header {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+/*------------------------------------------------------------
+|
+| CUSTOMER
+|
+------------------------------------------------------------*/
+
+.ui-section-customer__layout {
+  column-gap: var(--ui-gap-customer);
+  flex-direction: row;
+}
+
+.ui-section-customer--logo {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*------------------------------------------------------------
+|
+| FEATURE
+|
+------------------------------------------------------------*/
+
+.ui-section-feature__layout:nth-of-type(odd) div {
+  grid-row-start: initial;
+}
+
+/*------------------------------------------------------------
+|
+| FOOTER
+|
+------------------------------------------------------------*/
+
+.ui-section-footer {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.ui-section-footer__layout {
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ui-section-footer--menu {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+}
+
+/*--------------------------------------------------------------
+|
+| 8.2 1024PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 64rem) {
+
+/*------------------------------------------------------------
+VARIABLE
+------------------------------------------------------------*/
+
+:root {
+
+  /*----------------------------------------------------------
+  |
+  | LAYOUT
+  |
+  ----------------------------------------------------------*/
+
+  --ui-layout-container: 0;
+
+}
+
+/*------------------------------------------------------------
+TYPOGRAPHY
+------------------------------------------------------------*/
+
+a { transition: all 250ms ease; }
+
+a:not(.ui-component-button):hover {
+  color: var(--ui-color-typography-body);
+}
+
+/*------------------------------------------------------------
+LAYOUT
+------------------------------------------------------------*/
+
+.ui-layout-container { width: 60rem; }
+
+.ui-layout-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+}
+
+/*--------------------------------------------------------------
+|
+| 8.3 1200PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 75rem) {
+
+/*------------------------------------------------------------
+VARIABLE
+------------------------------------------------------------*/
+
+:root {
+
+  /*----------------------------------------------------------
+  |
+  | TYPOGRAPHY
+  |
+  ----------------------------------------------------------*/
+
+  /* FONT SIZE */
+
+  --ui-typography-h1: 2.75rem;
+  --ui-typography-h2: 2.1875rem;
+  --ui-typography-h4: 1.4375rem;
+
+  /* MARGIN */
+
+  --ui-typography-margin-heading: 1rem;
+  --ui-typography-margin-body   : 1.75rem;
+
+  /*----------------------------------------------------------
+  |
+  | LAYOUT
+  |
+  ----------------------------------------------------------*/
+
+  --ui-layout-grid  : 4rem;
+  --ui-layout-gutter: 2rem;
+
+  /* GAP */
+
+  --ui-gap-hero       : 4rem;
+  --ui-gap-customer   : 4rem;
+  --ui-gap-feature    : 4rem;
+  --ui-gap-testimonial: 4rem;
+  
+}
+
+/*------------------------------------------------------------
+TYPOGRAPHY
+------------------------------------------------------------*/
+
+.ui-text-intro { font-size: var(--ui-typography-h4); }
+
+/*------------------------------------------------------------
+LAYOUT
+------------------------------------------------------------*/
+
+.ui-layout-container { width: 70rem; }
+
+/*------------------------------------------------------------
+COMPONENT
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+|
+| BUTTON
+|
+------------------------------------------------------------*/
+
+.ui-component-button-normal {
+  padding-bottom: 1.125rem;
+  padding-top: 1rem;
+}
+
+.ui-component-button-small {
+  padding-bottom: .6875rem;
+  padding-top: .625rem;
+}
+
+/*------------------------------------------------------------
+SECTION
+------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+|
+| HEADER
+|
+------------------------------------------------------------*/
+
+.ui-section-header {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+/*------------------------------------------------------------
+|
+| HERO
+|
+------------------------------------------------------------*/
+
+.ui-section-hero {
+  padding-bottom: 7.5rem;
+  padding-top: 7.5rem;
+}
+
+/*------------------------------------------------------------
+|
+| CUSTOMER
+|
+------------------------------------------------------------*/
+
+.ui-section-customer--logo { height: 2rem; }
+
+.ui-section-customer--logo-str { height: 2.25rem; }
+
+.ui-section-customer--logo-bhn { height: 1.75rem; }
+
+/*------------------------------------------------------------
+|
+| FEATURE
+|
+------------------------------------------------------------*/
+
+.ui-section-feature {
+  padding-bottom: 7.5rem;
+  padding-top: 7.5rem;
+}
+
+.ui-section-feature__layout:nth-of-type(even) {
+  margin-bottom: 7.5rem;
+  margin-top: 7.5rem;
+}
+
+/* LIST */
+
+.ui-component-list-feature {
+  column-gap: var(--ui-layout-gutter);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*------------------------------------------------------------
+|
+| TESTIMONIAL
+|
+------------------------------------------------------------*/
+
+.ui-section-testimonial {
+  padding-bottom: 7.5rem;
+  padding-top: 7.5rem;
+}
+
+/*------------------------------------------------------------
+|
+| CLOSE
+|
+------------------------------------------------------------*/
+
+.ui-section-close { padding-top: 7.5rem; }
+
+/*------------------------------------------------------------
+|
+| FOOTER
+|
+------------------------------------------------------------*/
+
+.ui-section-footer {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+}
+    </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="../static/images/Superman.jpg" alt="">
+    </div>
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand " href="index.html">
+            <span>
+              आयुः स्वस्तः
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'about' %}"> About <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'services' %}">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'news' %}"> News </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <form class="form-inline justify-content-center">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <section class="ui-section-feature">
+    <div class="ui-layout-container">
+      <h1 align="center" font-weight="bold">Our policy</h1>
+      <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
+        <!-- IMAGE -->
+        <img src="https://lukaszadam.com/best-laptop-reddit.svg" loading="lazy" alt="#" class="ui-image-half-left">
+        <!-- FEATURE -->
+        <div>
+          <h3>Easy Coverage</h3>
+          <p class="ui-text-intro">There are various plans available to the insurer provided by government and private health insurance providers to cover every aspect of a medical emergency.
+
+           ​</p>
+          <ul class="ui-component-list ui-component-list-feature ui-layout-grid">
+            <li class="ui-component-list--item ui-component-list--item-check">Unlimited domain names.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">150&plus; components.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Lifetime updates.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">24/7 technical support.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
+        <!-- FEATURE -->
+        <div>
+          <h3>Premium Health</h3>
+          <p class="ui-text-intro">As the cost of living has gone up in metros and other cities, along with it Medical expenses are sky-rocketing, so the best advisable thing is to opt for health insurance and cover the medical costs thereby saving money and other resources in times of emergency.</p>
+          <ul class="ui-component-list ui-component-list-feature ui-layout-grid">
+            <li class="ui-component-list--item ui-component-list--item-check">Unlimited domain names.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">150&plus; components.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Lifetime updates.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">24/7 technical support.</li>
+          </ul>
+        </div>
+        <!-- IMAGE -->
+        <img src="https://lukaszadam.com/catp_computer_illustration.svg" loading="lazy" alt="#" class="ui-image-half-right">
+      </div>
+      <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
+        <!-- IMAGE -->
+        <img src="https://lukaszadam.com/gux+cat.svg" loading="lazy" alt="#" class="ui-image-half-left">
+        <!-- FEATURE -->
+        <div>
+          <h3>Hospitalization</h3>
+          <p class="ui-text-intro">Pre and Post Hospitalization: This feature covers pre and post hospitalisation charges for a month or 60 days and the person is reimbursed after submitting bills and other expense related documents incurred during the period of hospitalisation.</p>
+          <ul class="ui-component-list ui-component-list-feature ui-layout-grid">
+            <li class="ui-component-list--item ui-component-list--item-check">Unlimited domain names.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">150&plus; components.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Lifetime updates.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">24/7 technical support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ui-section-testimonial">
+    <div class="ui-layout-container">
+      <div class="ui-layout-column-6 ui-layout-column-center">
+        <h3>Wall of Love</h3>
+        <p class="ui-text-intro">Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="ui-section-testimonial__layout ui-layout-grid ui-layout-grid-3">
+        <div class="ui-layout-column-4">
+          <img src="../static/images/ava1.jpg" alt="#" class="ui-section-testimonial--avatar">
+          <p class="ui-section-testimonial--quote ui-text-intro">&ldquo;Once you buy a health insurance plan, you might feel relaxed that you have covered you and your family against any possible hospitalization in future. &rdquo;</p>
+          <p class="ui-section-testimonial--author"><strong>Jane Doe</strong><br><small class="ui-text-note">CEO of Company</small></p>
+        </div>
+        <div class="ui-layout-column-4">
+          <img src="../static/images/ava2.jpg" alt="#" class="ui-section-testimonial--avatar">
+          <p class="ui-section-testimonial--quote ui-text-intro">&ldquo;Premium you would pay is a vital aspect you should consider while buying a health insurance plan; but mind you, it shouldn't be paramount in your selection process. &rdquo;</p>
+          <p class="ui-section-testimonial--author"><strong>Jane Doe</strong><br><small class="ui-text-note">CEO of Company</small></p>
+        </div>
+        <div class="ui-layout-column-4">
+          <img src="../static/images/ava3.jpg" alt="#" class="ui-section-testimonial--avatar">
+          <p class="ui-section-testimonial--quote ui-text-intro">&ldquo; Just think, you buy a health plan with a very low premium without even taking into consideration the features of the policy. So you should be well aware of all the feature&rdquo;</p>
+          <p class="ui-section-testimonial--author"><strong>Jane Doe</strong><br><small class="ui-text-note">CEO of Company</small></p>
+        </div>
+        <div class="ui-layout-column-4">
+          <img src="../static/images/ava4.jpg" alt="#" class="ui-section-testimonial--avatar">
+          <p class="ui-section-testimonial--quote ui-text-intro">&ldquo;Network hospitals are those which have a direct tie up with your health insurance company; so in case of a claim you can avail the cashless facility. You can need better coverages&rdquo;</p>
+          <p class="ui-section-testimonial--author"><strong>Jane Doe</strong><br><small class="ui-text-note">CEO of Company</small></p>
+        </div>
+        <div class="ui-layout-column-4">
+          <img src="../static/images/ava5.jpg" alt="#" class="ui-section-testimonial--avatar">
+          <p class="ui-section-testimonial--quote ui-text-intro">&ldquo;Pre-Existing Diseases are those which you are suffering from before opting to buy a health insurance plan, and therefore insurance companies do not cover them from day 1 of your policy.&rdquo;</p>
+          <p class="ui-section-testimonial--author"><strong>Jane Doe</strong><br><small class="ui-text-note">CEO of Company</small></p>
+        </div>
+        <div class="ui-layout-column-4">
+          <img src="../static/images/ava6.jpg" alt="#" class="ui-section-testimonial--avatar">
+          <p class="ui-section-testimonial--quote ui-text-intro">&ldquo;Co-payment is a clause in health insurance plans that requires cost-sharing by the policyholder. Cost sharing is the specified percentage of the admissible claim amount Cashless facility saves&rdquo;</p>
+          <p class="ui-section-testimonial--author"><strong>Jane Doe</strong><br><small class="ui-text-note">CEO of Company</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="../static/js/bootstrap.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Register</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="username">Username</label><br>
+        {{form.username}} <br>
+        <p>Your user name must contain @,+,/ and some other symbols</p>
+        <label for="full_name">Fullname</label><br>
+        {{form.full_name}} <br>
+        <label for="first_name">FirstName</label><br>
+        {{form.first_name}} <br>
+        <label for="last_name">LastName</label><br>
+        {{form.last_name}} <br>
+        <label for="email">Email</label><br>
+        {{form.email}} <br>
+        <label for="occupation">Occupation</label><br>
+        {{form.occupation}} <br>
+        <label for="password1">Password</label><br>
+        {{form.password1}} <br>
+        <p>At least 8 characters—the more characters, the better.<br>
+            A mixture of both uppercase and lowercase letters.<br>
+            A mixture of letters and numbers.<br>
+            Inclusion of at least one special character, e.g., ! @ # ? ] <br/>
+            Note: do not use < or > in your password, as both can cause problems in Web browsers.
+            </p>
+        <label for="password2">Confirm Password</label><br>
+        {{form.password2}} <br>
+
+        {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                {{ error|escape }}
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            {{ error|escape }}
+        {% endfor %}
+        {% endif %} <br><br>
+        <input type="submit" value="Register">
+    </form>
+</div>
+</body>
+</html>

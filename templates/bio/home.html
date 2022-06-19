@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome {{user.username}}</h1>
+</body>
+</html>--->
+<!DOCTYPE html>
+<html>
+  <head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>Dashboard</title>
+  </head>
+  <body>
+    <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Insurances<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'indexer' %}">Applied</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'payment' %}">Pricing Section</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <br/>
+    <h2 align="center">Welcome {{user.username}}!</h2>
+    <div class="row">
+      <div class="col-sm-4 mb-5">
+         <div class="card mt-4 ">
+         
+            <div class="card">
+            <img class="card-img-top" src="https://lukaszadam.com/building_3.0.svg" height="250px" alt=" "/>
+            <div class="card-body">
+               <h4 class="card-title text-secondary">Health Insurance</h4>
+               <p class="card-text text-secondary">Health insurance is a contract where an insurance company provides medical coverage. It covers medical expenses incurred on hospitalization, surgeries, day care procedures, etc. A health insurance policy either reimburses the medical costs or offers cashless treatment.</p>
+            </div>
+            <div class="card-footer">
+               <a href="{% url 'regdash' %}" class="btn btn-primary">Claim Your Licence</a>
+            </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-4 mb-5">
+         <div class="card mt-4">
+            
+            <div class="card">
+            <img class="card-img-top" src="https://lukaszadam.com/city_landscape_illustrations_1.svg" height="250px"alt=" "/>
+            <div class="card-body">
+               <h4 class="card-title text-secondary">Life Insurance</h4>
+               <p class="card-text text-secondary">A life insurance plan is a contract between an insurance policyholder and an insurance company, where the insurer promises to pay a sum of money in exchange for a premium after a set period or upon the death of an insured person.</p>
+            </div>
+            <div class="card-footer">
+               <a href="{% url 'regdash' %}" class="btn btn-primary">Claim Your Licence</a>
+            </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-4 mb-5">
+      <div class="card mt-4">
+         
+         <div class="card">
+         <img class="card-img-top" src="https://lukaszadam.com/city_landscape_illustrations_2.svg" height="250px" alt=" "/>
+         <div class="card-body">
+            <h4 class="card-title text-secondary">Premium Insurance</h4>
+            <p class="card-text text-secondary"> Financial security and protection are the two most important benefits of Life Insurance. Payouts are generally tax-free. A guaranteed death benefit. With life insurance comes Tax benefit However, Tax savings should not be the reason for buying a term policy.</p>
+         </div>
+         <div class="card-footer">
+            <a href="{% url 'regdash' %}" class="btn btn-primary">Claim Your Licence</a>
+         </div>
+         </div>
+      </div>
+   </div>
+        </div>
+     </div>
+     
+      </div>
+  </body>
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
+
